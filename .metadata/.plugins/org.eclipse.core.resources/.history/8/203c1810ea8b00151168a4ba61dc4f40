@@ -1,0 +1,31 @@
+<project name="CRMJpa" default="buildJar" basedir=".">
+	<property name="project-name" value="${ant.project.name}" />
+	<property name="classes-directory" value="classes" />
+	<property name="build-directory" value="../build" />
+	<property name="crmweb-lib-directory" 
+		value="/home/tayron/Projetos/Java/JPA/CRMWeb/WebContent/WEB-INF/lib" />
+	
+	<tstamp prefix="build-info">
+		<format property="current-date" 
+			pattern="dd/mm/YYYY" locale="pt-br"/>
+		
+		<format property="current-time" 
+			pattern="hh:mm:ss" locale="pt-br"/>		
+	</tstamp>
+	
+	<description>ANT CRMJPA</description>
+	 
+	<target name="buildJar">
+		<echo>Empacotando o jar CRM</echo>
+		<jar basedir="${build-directory}/${classes-directory}"
+			destfile="${build-directory}/${project-name}.jar">
+		</jar>
+		
+		<echo>Apagando o arquivo das bibliotecas do CRMWeb</echo>
+		<delete file="${crmweb-lib-directory}/${project-name}.jar" />
+
+		<echo>Copiando o jar para a pasta de destino</echo>
+		<copy file="${build-directory}/${project-name}.jar"
+			todir="${crmweb-lib-directory}"/>
+	</target>	
+</project>

@@ -2,7 +2,7 @@ package br.com.crm.modelo.excecoes;
 
 
 /**
- * Classe de exceção para a camada de modelo
+ * Classe de exceÃ§Ã£o para a camada de modelo
  */
 public class ExcecaoModelo extends Exception{
 

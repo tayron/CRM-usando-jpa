@@ -12,14 +12,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ */
 public class FiltroUsuario implements Filter{
 
+	/**
+	 * 
+	 */
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
@@ -30,9 +38,9 @@ public class FiltroUsuario implements Filter{
 		HttpSession session = req.getSession();
 		String usuario = (String) session.getAttribute("usuario");
 		
-		//Caso tenha o usuario na sessão então chama o doFilter da
+		//Caso tenha o usuario na sessÃ£o entÃ£o chama o doFilter da
 		//cadeia de filtros
-		//passando o request e response originais para que a requisição
+		//passando o request e response originais para que a requisiÃ§Ã£o
 		//interceptada continue o seu fluxo normal.
 		if(usuario != null && usuario.trim().length()>0){
 			chain.doFilter(request,response);
@@ -50,9 +58,11 @@ public class FiltroUsuario implements Filter{
 		chain.doFilter(request, response);
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		// TODO Auto-generated method stub
 		
 	}
 

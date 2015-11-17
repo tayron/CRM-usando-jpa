@@ -7,26 +7,53 @@
 
 package br.com.curso.seguranca.validacao;
 
+import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Enumeration;
 import java.util.Vector;
+
+import javax.xml.namespace.QName;
+import javax.xml.rpc.Service;
+
 import org.apache.axis.AxisEngine;
 import org.apache.axis.AxisFault;
 import org.apache.axis.NoEndPointException;
 import org.apache.axis.client.Call;
+import org.apache.axis.client.Stub;
+import org.apache.axis.constants.Style;
+import org.apache.axis.constants.Use;
+import org.apache.axis.description.OperationDesc;
+import org.apache.axis.description.ParameterDesc;
 import org.apache.axis.soap.SOAPConstants;
 import org.apache.axis.utils.JavaUtils;
+
 import br.com.crm.negocio.excecoes.ExcecaoNegocio;
 
 /**
  * 
+ * @author tayron
+ *
  */
-public class ServicoValidacaoSoapBindingStub extends
-		org.apache.axis.client.Stub implements
-		br.com.curso.seguranca.validacao.ServicoValidacao {
+public class ServicoValidacaoSoapBindingStub extends Stub implements ServicoValidacao {
+	
+	/**
+	 * 
+	 */
 	private Vector cachedSerClasses = new Vector();
+	
+	/**
+	 * 
+	 */
 	private Vector cachedSerQNames = new Vector();
+	
+	/**
+	 * 
+	 */
 	private Vector cachedSerFactories = new Vector();
+	
+	/**
+	 * 
+	 */
 	private Vector cachedDeserFactories = new Vector();
 
 	/**
@@ -46,34 +73,33 @@ public class ServicoValidacaoSoapBindingStub extends
 	 * 
 	 */
 	private static void _initOperationDesc1() {
-		org.apache.axis.description.OperationDesc oper;
-		org.apache.axis.description.ParameterDesc param;
-		oper = new org.apache.axis.description.OperationDesc();
+		OperationDesc oper;
+		ParameterDesc param;
+		
+		oper = new OperationDesc();
 		oper.setName("validarSenha");
-		param = new org.apache.axis.description.ParameterDesc(
-				new javax.xml.namespace.QName(
-						"http://validacao.seguranca.curso.com.br", "senha"),
-				org.apache.axis.description.ParameterDesc.IN,
-				new javax.xml.namespace.QName(
-						"http://www.w3.org/2001/XMLSchema", "string"),
-				java.lang.String.class, false, false);
+		
+		param = new ParameterDesc(
+				new QName("http://validacao.seguranca.curso.com.br", "senha"),
+				ParameterDesc.IN,
+				new QName("http://www.w3.org/2001/XMLSchema", "string"),
+				String.class, false, false);
+		
 		oper.addParameter(param);
-		oper.setReturnType(new javax.xml.namespace.QName(
-				"http://www.w3.org/2001/XMLSchema", "boolean"));
+		oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
 		oper.setReturnClass(boolean.class);
-		oper.setReturnQName(new javax.xml.namespace.QName(
-				"http://validacao.seguranca.curso.com.br", "validarSenhaReturn"));
-		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-		oper.setUse(org.apache.axis.constants.Use.LITERAL);
+		oper.setReturnQName(new QName("http://validacao.seguranca.curso.com.br", "validarSenhaReturn"));
+		oper.setStyle(Style.WRAPPED);
+		oper.setUse(Use.LITERAL);
 		_operations[0] = oper;
 
 	}
 
 	/**
 	 * 
-	 * @throws org.apache.axis.AxisFault
+	 * @throws AxisFault
 	 */
-	public ServicoValidacaoSoapBindingStub() throws org.apache.axis.AxisFault {
+	public ServicoValidacaoSoapBindingStub() throws AxisFault {
 		this(null);
 	}
 
@@ -81,10 +107,10 @@ public class ServicoValidacaoSoapBindingStub extends
 	 * 
 	 * @param endpointURL
 	 * @param service
-	 * @throws org.apache.axis.AxisFault
+	 * @throws AxisFault
 	 */
-	public ServicoValidacaoSoapBindingStub(java.net.URL endpointURL,
-			javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+	public ServicoValidacaoSoapBindingStub(URL endpointURL,
+			Service service) throws AxisFault {
 		this(service);
 		super.cachedEndpoint = endpointURL;
 	}
@@ -92,10 +118,10 @@ public class ServicoValidacaoSoapBindingStub extends
 	/**
 	 * 
 	 * @param service
-	 * @throws org.apache.axis.AxisFault
+	 * @throws AxisFault
 	 */
-	public ServicoValidacaoSoapBindingStub(javax.xml.rpc.Service service)
-			throws org.apache.axis.AxisFault {
+	public ServicoValidacaoSoapBindingStub(Service service)
+			throws AxisFault {
 		if (service == null) {
 			super.service = new org.apache.axis.client.Service();
 		} else {
@@ -108,10 +134,9 @@ public class ServicoValidacaoSoapBindingStub extends
 	/**
 	 * 
 	 * @return
-	 * @throws java.rmi.RemoteException
+	 * @throws RemoteException
 	 */
-	protected Call createCall()
-			throws java.rmi.RemoteException {
+	protected Call createCall() throws RemoteException {
 		try {
 			Call _call = super._createCall();
 			if (super.maintainSessionSet) {
@@ -134,58 +159,58 @@ public class ServicoValidacaoSoapBindingStub extends
 			}
 			Enumeration keys = super.cachedProperties.keys();
 			while (keys.hasMoreElements()) {
-				java.lang.String key = (java.lang.String) keys.nextElement();
+				String key = (String) keys.nextElement();
 				_call.setProperty(key, super.cachedProperties.get(key));
 			}
 			return _call;
-		} catch (java.lang.Throwable _t) {
-			throw new org.apache.axis.AxisFault(
+		} catch (Throwable _t) {
+			throw new AxisFault(
 					"Falha ao tentar recuperar o objeto", _t);
 		}
 	}
 
 	/**
-	 * @throws ExcecaoNegocio 
+	 * @throws ExcecaoNegocio
 	 * 
 	 */
-	public boolean validarSenha(java.lang.String senha) throws RemoteException, ExcecaoNegocio {
-		
+	public boolean validarSenha(String senha) throws RemoteException,
+			ExcecaoNegocio {
+
 		if (super.cachedEndpoint == null) {
 			throw new NoEndPointException();
 		}
-		
-		org.apache.axis.client.Call _call = createCall();
+
+		Call _call = createCall();
 		_call.setOperation(_operations[0]);
 		_call.setUseSOAPAction(true);
 		_call.setSOAPActionURI("");
 		_call.setEncodingStyle(null);
-		_call.setProperty(Call.SEND_TYPE_ATTR,
-				Boolean.FALSE);
-		_call.setProperty(AxisEngine.PROP_DOMULTIREFS,
-				Boolean.FALSE);
+		_call.setProperty(Call.SEND_TYPE_ATTR, Boolean.FALSE);
+		_call.setProperty(AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
 		_call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-		_call.setOperationName(new javax.xml.namespace.QName(
+		_call.setOperationName(new QName(
 				"http://validacao.seguranca.curso.com.br", "validarSenha"));
 
 		setRequestHeaders(_call);
 		setAttachments(_call);
-		
-		try {
-			java.lang.Object _resp = _call.invoke(new java.lang.Object[] { senha });
 
-			if (_resp instanceof java.rmi.RemoteException) {
+		try {
+			Object _resp = _call
+					.invoke(new Object[] { senha });
+
+			if (_resp instanceof RemoteException) {
 				throw (RemoteException) _resp;
 			} else {
 				extractAttachments(_call);
 				try {
 					return ((Boolean) _resp).booleanValue();
 				} catch (Exception _exception) {
-					return ((Boolean) JavaUtils.convert(_resp, boolean.class)).booleanValue();
+					return ((Boolean) JavaUtils.convert(_resp, boolean.class))
+							.booleanValue();
 				}
 			}
 		} catch (AxisFault e) {
-			throw new ExcecaoNegocio("Serviço de validação de senha não está ativo");
+			throw new ExcecaoNegocio(e.getMessage());
 		}
 	}
-
 }

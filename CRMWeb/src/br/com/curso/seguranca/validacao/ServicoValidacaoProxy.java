@@ -15,14 +15,15 @@ public class ServicoValidacaoProxy implements
 	 * 
 	 */
 	private String _endpoint = null;
+	
 	/**
-   * 
-   */
+	 * 
+	 */
 	private br.com.curso.seguranca.validacao.ServicoValidacao servicoValidacao = null;
 
 	/**
-   * 
-   */
+	 * 
+	 */
 	public ServicoValidacaoProxy() {
 		_initServicoValidacaoProxy();
 	}
@@ -37,8 +38,8 @@ public class ServicoValidacaoProxy implements
 	}
 
 	/**
-   * 
-   */
+	 * 
+	 */
 	private void _initServicoValidacaoProxy() {
 		try {
 			servicoValidacao = (new ServicoValidacaoServiceLocator())
@@ -89,8 +90,8 @@ public class ServicoValidacaoProxy implements
 	}
 
 	/**
-   * 
-   */
+	 * 
+	 */
 	public boolean validarSenha(java.lang.String senha) throws RemoteException,
 			ExcecaoNegocio {
 		if (servicoValidacao == null)

@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/home/tayron/Projetos/Java/crm-usando-jpa/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3313887119.index
+2210891690.index
+3560789281.index
+1145758523.index
+432986289.index
+890349769.index

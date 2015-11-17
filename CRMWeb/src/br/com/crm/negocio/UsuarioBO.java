@@ -9,7 +9,7 @@ import br.com.crm.modelo.jdbc.UsuarioDAO;
 import br.com.crm.negocio.excecoes.ExcecaoNegocio;
 
 /**
- * ServiÁo que gerencia os dados do usuario
+ * Servi√ßo que gerencia os dados do usuario
  */
 public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 
@@ -24,7 +24,7 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 			validarCamposObrigatorios(t);
 			validarLogin(t);
 			if (!t.getSenha().equals(t.getConfirmaSenha())) {
-				throw new Exception("ConfirmaÁ„o de senha inv·lida");
+				throw new Exception("Confirma√ß√£o de senha inv√°lida");
 			}
 
 			usuarioDao.incluir(t);
@@ -46,11 +46,11 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 			validarLogin(t);
 			
 			if (t.getConfirmaSenha() == null) {
-				throw new Exception("O campo confirmaÁ„o de senha deve ser preenchido");
+				throw new Exception("O campo confirma√ß√£o de senha deve ser preenchido");
 			}
 			
 			if (!t.getSenha().equals(t.getConfirmaSenha())) {
-				throw new Exception("ConfirmaÁ„o de senha inv·lida");
+				throw new Exception("Confirma√ß√£o de senha inv√°lida");
 			}
 
 			usuarioDao.alterar(t);
@@ -130,7 +130,7 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 	}	
 
 	/**
-	 * mÈtodo que verifica se o campo login e senha foram preenchidos.
+	 * M√©todo que verifica se o campo login e senha foram preenchidos.
 	 * 
 	 * @param t
 	 * @throws ExcecaoNegocio
@@ -138,25 +138,25 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 	private void validarLogin(Usuario t) throws ExcecaoNegocio{
 		if(t.getLogin().isEmpty()||
 			t.getSenha().isEmpty()){ 
-			throw new ExcecaoNegocio("Login e senha obrigatÛrios");
+			throw new ExcecaoNegocio("Login e senha obrigat√≥rios");
 		}
 	}
 
 	/**
-	 * MÈtodo verifica se o id do usu·rio foi informado
+	 * M√©todo verifica se o id do usu√°rio foi informado
 	 * @param t
 	 * @throws Exception
 	 */
 	private void validarID(Usuario t) throws Exception{
 		UsuarioDAO usuarioDao = new UsuarioDAO();
 		if(t.getId() == null){
-			throw new Exception("ID È obrigatÛrio para operaÁıes de banco de dados");
+			throw new Exception("ID √© obrigat√≥rio para opera√ß√µes de banco de dados");
 		}
 
 		try{
 			usuarioDao.recuperar(t);
 		}catch(ExcecaoModelo e ){
-			throw new Exception("ID n„o encontrado para a operaÁ„o de banco de dados solicitada");
+			throw new Exception("ID n√£o encontrado para a opera√ß√µes de banco de dados solicitada");
 		}
 	}
 }

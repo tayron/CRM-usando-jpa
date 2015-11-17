@@ -1,7 +1,7 @@
 package br.com.crm.negocio.excecoes;
 
 /**
- * Classe de exceção para a camada de negócio.
+ * Classe de exceÃ§Ã£o para a camada de negÃ³cio.
  */
 public class ExcecaoNegocio extends Exception{
 	

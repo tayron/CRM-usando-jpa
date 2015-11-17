@@ -6,7 +6,7 @@ import br.com.crm.entidades.pessoas.Cliente;
 import br.com.crm.negocio.excecoes.ExcecaoNegocio;
 
 /**
- * Serviço que gerencia os dados do cliente
+ * ServiÃ§o que gerencia os dados do cliente
  */
 public class ClienteBO extends BaseBO<Cliente>{
 

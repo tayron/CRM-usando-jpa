@@ -6,13 +6,13 @@ import br.com.crm.entidades.pessoas.Pessoa;
 import br.com.crm.negocio.excecoes.ExcecaoNegocio;
 
 /**
- * Classe abstrata que define os mÈtodos a serem implementados 
- * pelas classes de negÛcio que extende de Pessoa.
+ * Classe abstrata que define os m√©todos a serem implementados 
+ * pelas classes de neg√≥cio que extende de Pessoa.
  */
 public abstract class BaseBO<T extends Pessoa> {
 
 	/**
-	 * MÈtodo que insere um registor no banco de dados
+	 * M√©todo que insere um registor no banco de dados
 	 * 
 	 * @param t
 	 * @throws ExcecaoNegocio
@@ -20,7 +20,7 @@ public abstract class BaseBO<T extends Pessoa> {
 	public abstract void incluir(T t) throws ExcecaoNegocio;
 	
 	/**
-	 * MÈtodo que altera um registro no banco de dados
+	 * M√©todo que altera um registro no banco de dados
 	 * 
 	 * @param t
 	 * @throws ExcecaoNegocio
@@ -28,7 +28,7 @@ public abstract class BaseBO<T extends Pessoa> {
 	public abstract void alterar(T t) throws ExcecaoNegocio;
 	
 	/**
-	 * MÈtodo que remove um registro do banco de dados
+	 * M√©todo que remove um registro do banco de dados
 	 * 
 	 * @param t
 	 * @throws ExcecaoNegocio
@@ -36,7 +36,7 @@ public abstract class BaseBO<T extends Pessoa> {
 	public abstract void excluir(T t) throws ExcecaoNegocio;
 	
 	/**
-	 * MÈtodo que lista todos os registros do banco de dados
+	 * M√©todo que lista todos os registros do banco de dados
 	 * 
 	 * @param t
 	 * @return
@@ -45,7 +45,7 @@ public abstract class BaseBO<T extends Pessoa> {
 	public abstract List<T> listar() throws ExcecaoNegocio;
 	
 	/**
-	 * MÈtodoque busca recupera uma entidade no banco de dados atravÈs do seu id
+	 * M√©todoque busca recupera uma entidade no banco de dados atrav√©s do seu id
 	 * 
 	 * @param t
 	 * @return
@@ -54,7 +54,7 @@ public abstract class BaseBO<T extends Pessoa> {
 	public abstract T recuperar(T t) throws ExcecaoNegocio; 
 	
 	/**
-	 * MÈtodo que valida se o nome, endereÁo e cfp est„o presentes
+	 * M√©todo que valida se o nome, endere√ßo e cfp est√£o presentes
 	 * 
 	 * @param t
 	 * @throws ExcecaoNegocio
@@ -63,8 +63,7 @@ public abstract class BaseBO<T extends Pessoa> {
 		if(t.getNome().isEmpty() || 
 			t.getEndereco().isEmpty() || 
 			t.getCpf().isEmpty()){
-			throw new ExcecaoNegocio("Campos obrigatÛrios n„o foram preenchidos");
+			throw new ExcecaoNegocio("Campos obrigat√≥rios n√£o foram preenchidos");
 		}
-	}
-	
+	}	
 }

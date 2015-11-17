@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 /**
- * Entity Bean para representação de uma pessoa
+ * Entity Bean para representaÃ§Ã£o de uma pessoa
  */
 @MappedSuperclass
 public class Pessoa extends EntidadeAbstrata {
@@ -22,13 +22,13 @@ public class Pessoa extends EntidadeAbstrata {
 	private String cpf;
 	
 	/**
-	 * Armazena o endereço da pessoa
+	 * Armazena o endereÃ§o da pessoa
 	 */
 	@Column(name="endereco", nullable=false, length=40)
 	private String endereco;
 	
 	/**
-	 * Armazena o status da pessoa, se ela está ativa ou não.
+	 * Armazena o status da pessoa, se ela estÃ¡ ativa ou nÃ£o.
 	 */
 	@Column(name="ativo", length=1)
 	private Boolean ativo;

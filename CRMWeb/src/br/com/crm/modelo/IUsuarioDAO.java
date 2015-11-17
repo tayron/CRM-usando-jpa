@@ -3,12 +3,12 @@ package br.com.crm.modelo;
 import br.com.crm.modelo.excecoes.ExcecaoModelo;
 
 /**
- * Interface DAO que define as operaÁıes b·sicas a serem implementadas pelo UsuarioDAO
+ * Interface DAO que define as opera√ß√µes b√°sicas a serem implementadas pelo UsuarioDAO
  */
 public interface IUsuarioDAO {
 	
 	/**
-	 * MÈtodo que pesquisa por um usu·rio atravÈs de seu login e senha
+	 * M√©todo que pesquisa por um usu√°rio atrav√©s de seu login e senha
 	 * 
 	 * @param login
 	 * @param senha

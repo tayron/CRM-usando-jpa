@@ -6,26 +6,26 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
- * Entity Bean para representação de um usuário
+ * Entity Bean para representaÃ§Ã£o de um usuÃ¡rio
  */
 @Entity
 @Table(name="usuarios")
 public class Usuario extends Pessoa{
 	
 	/**
-	 * Armazena o login do usuário 
+	 * Armazena o login do usuÃ¡rio 
 	 */
 	@Column(name="login", nullable=false, length=6)
 	private String login;
 	
 	/**
-	 * Armazena a senha do usuário
+	 * Armazena a senha do usuÃ¡rio
 	 */
 	@Column(name="senha", nullable=false, length=6)
 	private String senha;
 	
 	/**
-	 * Armazena a senha de confirmação do usuário
+	 * Armazena a senha de confirmaÃ§Ã£o do usuÃ¡rio
 	 */
 	@Transient
 	private String confirmaSenha;

@@ -6,12 +6,12 @@ import br.com.crm.entidades.pessoas.Pessoa;
 import br.com.crm.modelo.excecoes.ExcecaoModelo;
 
 /**
- * Interface DAO que define as operaÁıes b·sicas a serem implementadas 
+ * Interface DAO que define as opera√ß√µes b√°sicas a serem implementadas 
  */
 public interface IBaseDAO<T extends Pessoa> {
 
 	/**
-	 * MÈtodo que inclui um novo registro no banco dedados
+	 * M√©todo que inclui um novo registro no banco dedados
 	 * 
 	 * @param t
 	 * @throws ExcecaoModelo
@@ -19,7 +19,7 @@ public interface IBaseDAO<T extends Pessoa> {
 	public void incluir(T entidade) throws ExcecaoModelo;
 	
 	/**
-	 * MÈtodo que atualiza um determinado registro no banco de dados 
+	 * M√©todo que atualiza um determinado registro no banco de dados 
 	 * 
 	 * @param t
 	 * @throws ExcecaoModelo
@@ -27,7 +27,7 @@ public interface IBaseDAO<T extends Pessoa> {
 	public void alterar(T entidade) throws ExcecaoModelo;
 	
 	/**
-	 * MÈtodo que remove um determinado registro no banco de dados
+	 * M√©todo que remove um determinado registro no banco de dados
 	 * 
 	 * @param t
 	 * @throws ExcecaoModelo
@@ -35,7 +35,7 @@ public interface IBaseDAO<T extends Pessoa> {
 	public void excluir(T entidade) throws ExcecaoModelo;
 	
 	/**
-	 * MÈtodo que busca v·rios registros no banco de dados
+	 * M√©todo que busca v√°rios registros no banco de dados
 	 * 
 	 * @param t
 	 * @return
@@ -44,7 +44,7 @@ public interface IBaseDAO<T extends Pessoa> {
 	public List<T> listar() throws ExcecaoModelo;
 	
 	/**
-	 * MÈtodo que busca um registro no banco de dados
+	 * M√©todo que busca um registro no banco de dados
 	 * 
 	 * @param t
 	 * @return

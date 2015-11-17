@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que trata as requisições da tela principal do sistema
+ * Servlet que trata as requisiÃ§Ãµes da tela principal do sistema
  */
 @WebServlet("/ServletTelaPrincipal")
 public class ServletTelaPrincipal extends HttpServlet {
@@ -19,7 +19,7 @@ public class ServletTelaPrincipal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Método que trata os dados de uma requisiçao vista get
+	 * MÃ©todo que trata os dados de uma requisiÃ§Ã£o vista get
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +27,7 @@ public class ServletTelaPrincipal extends HttpServlet {
 	}
 
 	/**
-	 * Método que trata os dados de uma requisiçao vista post
+	 * MÃ©todo que trata os dados de uma requisiÃ§Ã£o vista post
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

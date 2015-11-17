@@ -12,7 +12,7 @@ import br.com.crm.modelo.IUsuarioDAO;
 import br.com.crm.modelo.excecoes.ExcecaoModelo;
 
 /**
- * Classe DAO para que manipula dos dao do usu·rio no banco
+ * Classe DAO para que manipula dos dao do usu√°rio no banco
  */
 public class UsuarioDAO implements IBaseDAO<Usuario>, IUsuarioDAO{
 
@@ -176,7 +176,7 @@ public class UsuarioDAO implements IBaseDAO<Usuario>, IUsuarioDAO{
 	public Usuario recuperar(Usuario usuarioEncontrar) throws ExcecaoModelo {
 		
 		if(usuarioEncontrar.getId() == null){
-			throw new ExcecaoModelo("ImpossÌvel recuperar o usu·rio sem o seu cÛdigo de identificaÁ„o.");
+			throw new ExcecaoModelo("Imposs√≠vel recuperar o usu√°rio sem o seu c√≥digo de identifica√ß√£o.");
 		}
 		
 		Usuario usuario = new Usuario();

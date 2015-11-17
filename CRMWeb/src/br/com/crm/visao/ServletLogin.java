@@ -14,7 +14,7 @@ import br.com.crm.negocio.UsuarioBO;
 import br.com.crm.negocio.excecoes.ExcecaoNegocio;
 
 /**
- * Servlet que trata as requisições da tela de login do usuário
+ * Servlet que trata as requisiÃ§Ãµes da tela de login do usuÃ¡rio
  */
 @WebServlet("/ServletLogin")
 public class ServletLogin extends HttpServlet {
@@ -25,14 +25,14 @@ public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Método que trata os dados de requisiçao via get
+	 * MÃ©todo que trata os dados de requisiÃ§Ã£o via get
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 	}
 
 	/**
-	 * Método que trata os dados de uma requisiçao vista post
+	 * MÃ©todo que trata os dados de uma requisiÃ§Ã£o vista post
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

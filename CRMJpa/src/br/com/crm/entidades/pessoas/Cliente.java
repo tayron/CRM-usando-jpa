@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Entity Bean para representação de um cliente
+ * Entity Bean para representaÃ§Ã£o de um cliente
  */
 @Entity
 @Table(name="clientes")

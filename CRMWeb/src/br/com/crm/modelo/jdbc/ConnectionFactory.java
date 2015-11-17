@@ -9,7 +9,7 @@ import java.sql.Statement;
 import br.com.crm.modelo.excecoes.ExcecaoModelo;
 
 /**
- * Classe que disponibiliza e gerencia uma coneÁao com o banco de dados
+ * Classe que disponibiliza e gerencia uma conex√£o com o banco de dados
  */
 public class ConnectionFactory {
 
@@ -19,17 +19,17 @@ public class ConnectionFactory {
 	private final static String dbName = "crm";
 	
 	/**
-	 * Armazena o nome do usu·rio do banco de dados
+	 * Armazena o nome do usu√°rio do banco de dados
 	 */
 	private final static String dbUser = "root";
 	
 	/**
-	 * Armazena a senha do usu·rio do banco de dados
+	 * Armazena a senha do usu√°rio do banco de dados
 	 */
 	private final static String dbPassword = "123456";
 	
 	/**
-	 * Cria e retorna uma conex„o com banco de dados
+	 * Cria e retorna uma conex√£o com banco de dados
 	 * 
 	 * @return
 	 * @throws ExcecaoModelo
@@ -50,7 +50,7 @@ public class ConnectionFactory {
 	}
 	
 	/**
-	 * Fecha a coneÁ„o com o banco de dados
+	 * Fecha a conex√£o com o banco de dados
 	 *  
 	 * @param conn
 	 * @throws ExcecaoModelo
@@ -60,7 +60,7 @@ public class ConnectionFactory {
 	}
 	
 	/**
-	 * Fecha a conex„o com o banco de dados
+	 * Fecha a conex√£o com o banco de dados
 	 * 
 	 * @param conn
 	 * @param smt
@@ -71,7 +71,7 @@ public class ConnectionFactory {
 	}
 	
 	/**
-	 * Fecha umaconex„o com o banco de dados
+	 * Fecha uma conex√£o com o banco de dados
 	 * 
 	 * @param conn
 	 * @param smt
@@ -83,7 +83,7 @@ public class ConnectionFactory {
 	}
 	
 	/**
-	 * Fecha todas as conexıes com o banco de dados
+	 * Fecha todas as conex√µes com o banco de dados
 	 * 
 	 * @param conn
 	 * @param smt

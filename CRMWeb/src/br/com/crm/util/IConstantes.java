@@ -2,7 +2,7 @@ package br.com.crm.util;
 
 public interface IConstantes {
 	public static final String MSG_EXCECAO_MODELO = "EXCECAO NA CAMADA DE MODELO: ";
-	public static final String MSG_EXCECAO_NEGOCIO = "EXCECAO NA CAMADA DE NEGÓCIO: ";
+	public static final String MSG_EXCECAO_NEGOCIO = "EXCECAO NA CAMADA DE NEGÃ“CIO: ";
 	public static final String MSG_EXCECAO_VISAO = "EXCECAO NA CAMADA DE VISAO: ";
 	
 	public static final String CAMINHO_ARQUIVOS = "D:\\temp\\CRM\\";

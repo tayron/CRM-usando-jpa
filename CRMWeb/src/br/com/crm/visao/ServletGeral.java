@@ -19,7 +19,7 @@ import br.com.curso.seguranca.validacao.ServicoValidacao;
 import br.com.curso.seguranca.validacao.ServicoValidacaoProxy;
 
 /**
- * Servlet que trata as requisiÁıes da tela de usu·rio
+ * Servlet que trata as requisi√ß√µes da tela de usu√°rio
  */
 @WebServlet("/ServletGeral")
 public class ServletGeral extends HttpServlet {
@@ -30,14 +30,14 @@ public class ServletGeral extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * MÈtodo que trata os dados de requisiÁao via get
+	 * M√©todo que trata os dados de requisi√ß√£o via get
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 	}
 
 	/**
-	 * MÈtodo que trata os dados de uma requisiÁao vista post
+	 * M√©todo que trata os dados de uma requisi√ß√£o vista post
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -76,7 +76,7 @@ public class ServletGeral extends HttpServlet {
 	}
 
 	/**
-	 * MÈtodo que cadastra um novo usu·rio
+	 * M√©todo que cadastra um novo usu√°rio
 	 * 
 	 * @param request
 	 * @param response
@@ -127,7 +127,7 @@ public class ServletGeral extends HttpServlet {
 	}
 
 	/**
-	 * MÈtodo que busca todos os usu·rios cadastrados
+	 * M√©todo que busca todos os usu√°rios cadastrados
 	 * 
 	 * @param request
 	 * @param response
@@ -155,7 +155,7 @@ public class ServletGeral extends HttpServlet {
 	}
 
 	/**
-	 * MÈtodo que exclui um usu·rio
+	 * M√©todo que exclui um usu√°rio
 	 * 
 	 * @param request
 	 * @param response
@@ -189,7 +189,7 @@ public class ServletGeral extends HttpServlet {
 	}
 
 	/**
-	 * MÈtodo que edita os dados do usu·rio
+	 * M√©todo que edita os dados do usu√°rio
 	 * 
 	 * @param request
 	 * @param response
@@ -251,7 +251,7 @@ public class ServletGeral extends HttpServlet {
 	}
 
 	/**
-	 * MÈtodo que busca o usuario pelo seu id
+	 * M√©todo que busca o usuario pelo seu id
 	 * 
 	 * @param request
 	 * @param response

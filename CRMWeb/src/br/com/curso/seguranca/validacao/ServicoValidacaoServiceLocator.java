@@ -7,6 +7,11 @@
 
 package br.com.curso.seguranca.validacao;
 
+/**
+ * 
+ * @author tayron
+ *
+ */
 public class ServicoValidacaoServiceLocator extends org.apache.axis.client.Service implements br.com.curso.seguranca.validacao.ServicoValidacaoService {
 
     /**
@@ -14,36 +19,67 @@ public class ServicoValidacaoServiceLocator extends org.apache.axis.client.Servi
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * 
+	 */
 	public ServicoValidacaoServiceLocator() {
+		
     }
 
-
+	/**
+	 * 
+	 * @param config
+	 */
     public ServicoValidacaoServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
+    /**
+     * 
+     * @param wsdlLoc
+     * @param sName
+     * @throws javax.xml.rpc.ServiceException
+     */
     public ServicoValidacaoServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for ServicoValidacao
+    /**
+     * Use to get a proxy class for ServicoValidacao
+     */
     private java.lang.String ServicoValidacao_address = "http://localhost:8080/ValidacaoSeguranca/services/ServicoValidacao";
 
+    /**
+     * 
+     */
     public java.lang.String getServicoValidacaoAddress() {
         return ServicoValidacao_address;
     }
 
-    // The WSDD service name defaults to the port name.
+    /**
+     * The WSDD service name defaults to the port name.
+     */
     private java.lang.String ServicoValidacaoWSDDServiceName = "ServicoValidacao";
 
+    /**
+     * 
+     * @return
+     */
     public java.lang.String getServicoValidacaoWSDDServiceName() {
         return ServicoValidacaoWSDDServiceName;
     }
 
+    /**
+     * 
+     * @param name
+     */
     public void setServicoValidacaoWSDDServiceName(java.lang.String name) {
         ServicoValidacaoWSDDServiceName = name;
     }
 
+    /**
+     * 
+     */
     public br.com.curso.seguranca.validacao.ServicoValidacao getServicoValidacao() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
@@ -55,6 +91,9 @@ public class ServicoValidacaoServiceLocator extends org.apache.axis.client.Servi
         return getServicoValidacao(endpoint);
     }
 
+    /**
+     * 
+     */
     public br.com.curso.seguranca.validacao.ServicoValidacao getServicoValidacao(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
             br.com.curso.seguranca.validacao.ServicoValidacaoSoapBindingStub _stub = new br.com.curso.seguranca.validacao.ServicoValidacaoSoapBindingStub(portAddress, this);
@@ -66,6 +105,10 @@ public class ServicoValidacaoServiceLocator extends org.apache.axis.client.Servi
         }
     }
 
+    /**
+     * 
+     * @param address
+     */
     public void setServicoValidacaoEndpointAddress(java.lang.String address) {
         ServicoValidacao_address = address;
     }
@@ -109,12 +152,21 @@ public class ServicoValidacaoServiceLocator extends org.apache.axis.client.Servi
         }
     }
 
+    /**
+     * 
+     */
     public javax.xml.namespace.QName getServiceName() {
         return new javax.xml.namespace.QName("http://validacao.seguranca.curso.com.br", "ServicoValidacaoService");
     }
 
+    /**
+     * 
+     */
     private java.util.HashSet ports = null;
 
+    /**
+     * 
+     */
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
@@ -124,24 +176,20 @@ public class ServicoValidacaoServiceLocator extends org.apache.axis.client.Servi
     }
 
     /**
-    * Set the endpoint address for the specified port name.
-    */
-    public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
-        
-if ("ServicoValidacao".equals(portName)) {
+     * Set the endpoint address for the specified port name.
+     */
+    public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {        
+    	if ("ServicoValidacao".equals(portName)) {
             setServicoValidacaoEndpointAddress(address);
-        }
-        else 
-{ // Unknown Port Name
-            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
+        }else{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException("Cannot set Endpoint Address for Unknown Port" + portName);
         }
     }
 
     /**
-    * Set the endpoint address for the specified port name.
-    */
+     * Set the endpoint address for the specified port name.
+     */
     public void setEndpointAddress(javax.xml.namespace.QName portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         setEndpointAddress(portName.getLocalPart(), address);
     }
-
 }

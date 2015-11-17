@@ -9,13 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- * Entity Bean para representação de uma entidade abstrata
+ * Entity Bean para representaÃ§Ã£o de uma entidade abstrata
  */
 @MappedSuperclass
 public abstract class EntidadeAbstrata {
 	
 	/**
-	 * Armazena o código de indentifição
+	 * Armazena o cÃ³digo de indentifiÃ§Ã£o
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
