@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.axis.client.Stub"/>
-<fullyQualifiedTypeName name="javax.xml.namespace.QName"/>
-<fullyQualifiedTypeName name="org.apache.axis.constants.Style"/>
-<fullyQualifiedTypeName name="org.apache.axis.constants.Use"/>
-<fullyQualifiedTypeName name="javax.xml.rpc.Service"/>
-<fullyQualifiedTypeName name="java.net.URL"/>
-</qualifiedTypeNameHistroy>

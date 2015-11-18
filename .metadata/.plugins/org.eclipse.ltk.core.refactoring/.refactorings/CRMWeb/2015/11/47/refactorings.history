@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;msg&apos; in &apos;br.com.crm.visao.excecoes.ExcecaoVisao.ExcecaoVisao(...)&apos; to &apos;mensagem&apos;&#x0A;- Original project: &apos;CRMWeb&apos;&#x0A;- Original element: &apos;br.com.crm.visao.excecoes.ExcecaoVisao.ExcecaoVisao(String).msg&apos;&#x0A;- Renamed element: &apos;msg&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;msg&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;br.com.crm.visao.excecoes{ExcecaoVisao.java[ExcecaoVisao~ExcecaoVisao~QString;@msg!310!319!317!319!QString;!0!true" name="mensagem" references="true" stamp="1447798448008" version="1.0"/>
-</session>

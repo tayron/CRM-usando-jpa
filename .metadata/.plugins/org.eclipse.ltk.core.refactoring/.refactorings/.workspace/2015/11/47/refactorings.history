@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;CRMJpa&apos; to &apos;CRMJpa_backup&apos;" description="Rename resource &apos;CRMJpa&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CRMJpa" name="CRMJpa_backup" stamp="1447798289055" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;CRMJpa_backup&apos; to &apos;CRMJpa&apos;" description="Rename resource &apos;CRMJpa_backup&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CRMJpa_backup" name="CRMJpa" stamp="1447798320266" updateReferences="true"/>
-</session>
