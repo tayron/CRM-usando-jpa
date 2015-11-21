@@ -5,7 +5,7 @@ import java.util.List;
 
 import br.com.crm.entidades.pessoas.Usuario;
 import br.com.crm.modelo.excecoes.ExcecaoModelo;
-import br.com.crm.modelo.jdbc.UsuarioDAO;
+import br.com.crm.modelo.dao.UsuarioDAO;
 import br.com.crm.negocio.excecoes.ExcecaoNegocio;
 
 /**
@@ -17,17 +17,17 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 	 * {@link BaseBO#incluir(Usuario)}
 	 */
 	@Override
-	public void incluir(Usuario t) throws ExcecaoNegocio{
+	public void incluir(Usuario usuario) throws ExcecaoNegocio{
 		UsuarioDAO usuarioDao = new UsuarioDAO();
 
 		try {
-			validarCamposObrigatorios(t);
-			validarLogin(t);
-			if (!t.getSenha().equals(t.getConfirmaSenha())) {
+			validarCamposObrigatorios(usuario);
+			validarLogin(usuario);
+			if (!usuario.getSenha().equals(usuario.getConfirmaSenha())) {
 				throw new Exception("Confirmação de senha inválida");
 			}
 
-			usuarioDao.incluir(t);
+			usuarioDao.incluir(usuario);
 		} catch (Exception e) {
 			throw new ExcecaoNegocio(e.getMessage());
 		}
@@ -37,23 +37,23 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 	 * {@link BaseBO#alterar(Usuario)}
 	 */
 	@Override
-	public void alterar(Usuario t)  throws ExcecaoNegocio{
+	public void alterar(Usuario usuario)  throws ExcecaoNegocio{
 		UsuarioDAO usuarioDao = new UsuarioDAO();
 
 		try {
-			validarID(t);
-			validarCamposObrigatorios(t);
-			validarLogin(t);
+			validarID(usuario);
+			validarCamposObrigatorios(usuario);
+			validarLogin(usuario);
 			
-			if (t.getConfirmaSenha() == null) {
+			if (usuario.getConfirmaSenha() == null) {
 				throw new Exception("O campo confirmação de senha deve ser preenchido");
 			}
 			
-			if (!t.getSenha().equals(t.getConfirmaSenha())) {
+			if (!usuario.getSenha().equals(usuario.getConfirmaSenha())) {
 				throw new Exception("Confirmação de senha inválida");
 			}
 
-			usuarioDao.alterar(t);
+			usuarioDao.alterar(usuario);
 		} catch (Exception e) {
 			throw new ExcecaoNegocio(e.getMessage());
 		}
@@ -63,12 +63,12 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 	 * {@link BaseBO#excluir(Usuario)}
 	 */
 	@Override
-	public void excluir(Usuario t)  throws ExcecaoNegocio{
+	public void excluir(Usuario usuario)  throws ExcecaoNegocio{
 		try {
 			UsuarioDAO usuarioDao = new UsuarioDAO();
-			validarID(t);
+			validarID(usuario);
 			
-			usuarioDao.excluir(t);
+			usuarioDao.excluir(usuario);
 		} catch (Exception e) {
 			throw new ExcecaoNegocio(e.getMessage());
 		}		
@@ -132,29 +132,29 @@ public class UsuarioBO extends BaseBO<Usuario> implements IUsuarioBO{
 	/**
 	 * Método que verifica se o campo login e senha foram preenchidos.
 	 * 
-	 * @param t
+	 * @param usuario
 	 * @throws ExcecaoNegocio
 	 */
-	private void validarLogin(Usuario t) throws ExcecaoNegocio{
-		if(t.getLogin().isEmpty()||
-			t.getSenha().isEmpty()){ 
+	private void validarLogin(Usuario usuario) throws ExcecaoNegocio{
+		if(usuario.getLogin().isEmpty()||
+			usuario.getSenha().isEmpty()){ 
 			throw new ExcecaoNegocio("Login e senha obrigatórios");
 		}
 	}
 
 	/**
 	 * Método verifica se o id do usuário foi informado
-	 * @param t
+	 * @param usuario
 	 * @throws Exception
 	 */
-	private void validarID(Usuario t) throws Exception{
+	private void validarID(Usuario usuario) throws Exception{
 		UsuarioDAO usuarioDao = new UsuarioDAO();
-		if(t.getId() == null){
+		if(usuario.getId() == null){
 			throw new Exception("ID é obrigatório para operações de banco de dados");
 		}
 
 		try{
-			usuarioDao.recuperar(t);
+			usuarioDao.recuperar(usuario);
 		}catch(ExcecaoModelo e ){
 			throw new Exception("ID não encontrado para a operações de banco de dados solicitada");
 		}
